@@ -14259,15 +14259,16 @@ a.anchor-link {
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[130]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[309]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pastels.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">birthday</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">birthday</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">df</span><span class="o">.</span><span class="n">birthday</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">birthday</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14283,7 +14284,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[130]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[309]:</div>
 
 
 
@@ -14329,57 +14330,12 @@ a.anchor-link {
     <tr>
       <th>3</th>
       <td>Laura</td>
-      <td>2021-06-04</td>
+      <td>2021-04-06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Alexis</td>
-      <td>2021-01-06</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Clement</td>
-      <td>2021-09-07</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Raphael</td>
-      <td>2021-07-17</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Robin</td>
-      <td>2021-07-31</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Tom</td>
-      <td>2021-08-14</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Bastien</td>
-      <td>2021-10-09</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Guillaume</td>
-      <td>2021-09-29</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Amelie</td>
-      <td>2021-01-10</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Lucas</td>
-      <td>2021-09-10</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Victor</td>
-      <td>2021-12-21</td>
+      <td>2021-06-01</td>
     </tr>
   </tbody>
 </table>
@@ -14392,16 +14348,17 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[310]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">now</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-<span class="n">now</span>
+<span class="n">ajd</span> <span class="o">=</span> <span class="s2">&quot;Aujourd&#39;hui&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">ajd</span><span class="p">,</span> <span class="s1">&#39;birthday&#39;</span><span class="p">:</span> <span class="n">now</span><span class="p">},</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14409,40 +14366,35 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[131]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Timestamp(&#39;2021-10-20 20:37:25.570295&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[132]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[311]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s2">&quot;Aujourd&#39;hui&quot;</span><span class="p">,</span> <span class="s1">&#39;birthday&#39;</span><span class="p">:</span> <span class="n">now</span><span class="p">},</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;birthday_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">day</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">birthday</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;birthday_month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span><span class="o">.</span><span class="n">month</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">birthday</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import plotly.express as px</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># df[&#39;birthday_day&#39;] = [date.day for date in df.birthday]</span>
+<span class="c1"># df[&#39;birthday_month&#39;] = [date.month for date in df.birthday]</span>
+
+<span class="c1"># df.sort_values(by=&#39;birthday_month&#39;, inplace=True, ascending=False)</span>
+
+<span class="c1"># fig = px.scatter(df, x=&quot;birthday_month&quot;, y=&#39;birthday_day&#39;, text=&#39;name&#39;)</span>
+
+<span class="c1"># fig.update_layout(</span>
+<span class="c1">#     xaxis = dict(</span>
+<span class="c1">#         tickmode = &#39;linear&#39;,</span>
+<span class="c1">#         tick0 = 1,</span>
+<span class="c1">#         dtick = 1</span>
+<span class="c1">#     )</span>
+<span class="c1"># )</span>
+
+<span class="c1"># fig.update_traces(</span>
+<span class="c1">#     textposition=&#39;top center&#39;</span>
+<span class="c1"># )</span>
+
+<span class="c1"># fig.show()</span>
+<span class="c1"># fig.write_html(&#39;birthday_scatter.html&#39;)</span>
 </pre></div>
 
      </div>
@@ -14450,100 +14402,76 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[132]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>birthday</th>
-      <th>birthday_day</th>
-      <th>birthday_month</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>12</th>
-      <td>Lucas</td>
-      <td>2021-09-10 00:00:00.000000</td>
-      <td>10</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Victor</td>
-      <td>2021-12-21 00:00:00.000000</td>
-      <td>21</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Aujourd'hui</td>
-      <td>2021-10-20 20:37:25.570295</td>
-      <td>20</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[133]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[321]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;birthday_month&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">locale</span>
+<span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">calendar</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;birthday_month&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;birthday_day&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="n">year</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">tickmode</span> <span class="o">=</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span>
-        <span class="n">tick0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="n">dtick</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">d2</span> <span class="o">-</span> <span class="n">d1</span>
+
+<span class="n">dates_in_year</span> <span class="o">=</span> <span class="p">[</span><span class="n">d1</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">days</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">weekdays_in_year</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dates_in_year</span><span class="p">]</span>
+<span class="n">weeknumber_of_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%G</span><span class="s2">%V&quot;</span><span class="p">)[</span><span class="mi">4</span><span class="p">:]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dates_in_year</span><span class="p">]</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dates_in_year</span><span class="p">))</span>
+<span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dates_in_year</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ajd</span><span class="p">:</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">birthday</span><span class="o">.</span><span class="n">day_of_year</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">birthday</span><span class="o">.</span><span class="n">day_of_year</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">information_hover</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">calendar</span><span class="o">.</span><span class="n">day_name</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">birthday</span><span class="o">.</span><span class="n">weekday</span><span class="p">()]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">birthday</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">calendar</span><span class="o">.</span><span class="n">month_name</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">birthday</span><span class="o">.</span><span class="n">month</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+    <span class="n">text</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">birthday</span><span class="o">.</span><span class="n">day_of_year</span><span class="p">]</span> <span class="o">=</span> <span class="n">information_hover</span>
+
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;#172a16&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;#ddecdc&#39;</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;#5fa95b&#39;</span><span class="p">]]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">weeknumber_of_dates</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">weekdays_in_year</span><span class="p">,</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+        <span class="n">hoverinfo</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+        <span class="n">xgap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># this</span>
+        <span class="n">ygap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># and this is used to make the grid-like apperance</span>
+        <span class="n">showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">colorscale</span><span class="o">=</span><span class="n">colorscale</span>
     <span class="p">)</span>
+<span class="p">]</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anniversaires Pastel&#39;</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">showline</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">showgrid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">zeroline</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">tickmode</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
+        <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Dimanche&quot;</span><span class="p">,</span> <span class="s2">&quot;Lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;Vendredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Samedi&quot;</span><span class="p">],</span>
+        <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+    <span class="p">),</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">showline</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">showgrid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">zeroline</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">),</span>
+        <span class="n">font</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
+        <span class="n">plot_bgcolor</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;#050a05&#39;</span><span class="p">),</span>
+        <span class="n">margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">45</span><span class="p">),</span>
+        <span class="n">template</span><span class="o">=</span><span class="s1">&#39;plotly_dark&#39;</span>
 <span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;top center&#39;</span>
-<span class="p">)</span>
-
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -14572,24 +14500,10 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s1">&#39;birthday_plotly.html&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[135]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[313]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert --to html birthday.ipynb
@@ -14615,7 +14529,7 @@ a.anchor-link {
 <pre>[NbConvertApp] Converting notebook birthday.ipynb to html
 D:\ana_conda\envs\sandbox\lib\site-packages\nbconvert\filters\datatypefilter.py:41: UserWarning: Your element with mimetype(s) dict_keys([&#39;application/vnd.plotly.v1+json&#39;]) is not able to be represented.
   mimetypes=output.keys())
-[NbConvertApp] Writing 577741 bytes to birthday.html
+[NbConvertApp] Writing 593954 bytes to birthday.html
 </pre>
 </div>
 </div>
